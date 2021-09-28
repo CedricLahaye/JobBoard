@@ -1,36 +1,61 @@
-USE jobboard;
+USE `jobboard`;
 
-CREATE TABLE advertisements(
-	id int primary key,
-    title varchar(255),
-    content text,
-    short_description varchar(255),
-    company_id int,
-    address varchar(255),
-    wages int,
-    publish_date datetime,
-    contract_id int,
-    foreign key (contact_id) references contracts(id),
-    foreign key (company_id) references companies(id)
-);
+DROP TABLE IF EXISTS `advertisements`;
+CREATE TABLE `advertisements` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `content` text COLLATE utf8_unicode_ci NOT NULL,
+  `short_description` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `company_id` int NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `wages` int NOT NULL,
+  `publish_date` date NOT NULL,
+  `contract_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE contracts(
-	id int primary key,
-    title varchar(255)
-);
 
-CREATE TABLE companies(
-	id int primary key,
-    title varchar(255),
-    address varchar(255),
-    advertisements_id int,
-    foreign key (advertisements_id) references advertisements(id)
-);
+DROP TABLE IF EXISTS `companies`;
+CREATE TABLE `companies` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `advertisements_id` int NOT NULL,
+  `people_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `advertisements_id` (`advertisements_id`),
+  KEY `people_id` (`people_id`),
+  CONSTRAINT `companies_ibfk_1` FOREIGN KEY (`advertisements_id`) REFERENCES `advertisements` (`id`),
+  CONSTRAINT `companies_ibfk_2` FOREIGN KEY (`people_id`) REFERENCES `people` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
 
-CREATE TABLE people(
-	id int primary key,
-    username varchar(255),
-    user_password varchar(255),
-    email varchar(255),
-    phone int
-);
+
+DROP TABLE IF EXISTS `contracts`;
+CREATE TABLE `contracts` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+
+
+DROP TABLE IF EXISTS `people`;
+CREATE TABLE `people` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `full_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `passwd` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `phone` int NOT NULL,
+  `role_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `role_id` (`role_id`),
+  CONSTRAINT `people_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
+
+
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE `roles` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_unicode_ci;
