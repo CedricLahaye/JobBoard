@@ -1,0 +1,26 @@
+.card{
+    margin: 20px;
+    border: 10px solid;
+}
+
+.card .btn{
+    background-color: #36eb8bbb;
+    color: white;
+}
+
+.card .btn:hover{
+    background-color: #36EB8B;
+    color: #52554a;
+}
+
+.card:hover .card-title{
+    color: #B557EB;
+}
+
+li{
+    list-style: none;
+}
+
+.info a{
+    float: right;
+}
