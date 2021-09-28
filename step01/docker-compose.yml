@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  mysql-development:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: testos
+      MYSQL_DATABASE: jobboard
+    ports:
+      - "3308:3308"
+    volumes:
+      - jobbdd:/var/lib/mysql
+  admin:    
+    image: adminer    
+    ports:      
+      - "8080:8080"
+volumes:
+  jobbdd:
