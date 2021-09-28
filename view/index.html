@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>JobBoard</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">JobBoard</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" href="#">Connection</a>
+                  <a class="nav-link" href="#">Add Ads</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="container">
+      <div class="card text-white bg-dark mb-3" id="card">
+        <div class="card-body">
+          <h5 class="card-title">Développeur - front et back - Symfony - H/F</h5> <hr>
+          <p class="card-text">Artishoc accompagne plus de 60 acteurs culturels dans leur stratégie de communication web : Site web, billetterie, newsletters, réseaux sociaux.</p>
+          <div class="info">
+            <ul>
+              <li>Epitech</li>
+              <li>Nantes (44)</li>
+            </ul>
+            <button type="button" class="btn">Learn more</button>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
+        </div>
+      </div>
+      <div class="card text-white bg-dark mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Développeur - front et back - Symfony - H/F</h5> <hr>
+          <p class="card-text">Artishoc accompagne plus de 60 acteurs culturels dans leur stratégie de communication web : Site web, billetterie, newsletters, réseaux sociaux.</p>
+          <div class="info">
+            <ul>
+              <li>Epitech</li>
+              <li>Nantes (44)</li>
+            </ul>
+            <button type="button" class="learnmore">Learn more</button>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
+        </div>
+        <div class="oui">
+          <p>Chaussettes</p>
+          <button type="button" class="dick"></button>
+        </div>
+      </div>
+      <div class="card text-white bg-dark mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Développeur - front et back - Symfony - H/F</h5> <hr>
+          <p class="card-text">Artishoc accompagne plus de 60 acteurs culturels dans leur stratégie de communication web : Site web, billetterie, newsletters, réseaux sociaux.</p>
+          <div class="info">
+            <ul>
+              <li>Epitech</li>
+              <li>Nantes (44)</li>
+            </ul>
+            <button type="button" class="btn">Learn more</button>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
+        </div>
+      </div>
+      <div class="card text-white bg-dark mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Développeur - front et back - Symfony - H/F</h5> <hr>
+          <p class="card-text">Artishoc accompagne plus de 60 acteurs culturels dans leur stratégie de communication web : Site web, billetterie, newsletters, réseaux sociaux.</p>
+          <div class="info">
+            <ul>
+              <li>Epitech</li>
+              <li>Nantes (44)</li>
+            </ul>
+            <button type="button" class="btn">Learn more</button>
+          </div>
+          <div class="card-footer text-muted">
+            2 days ago
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
+<script>
+$('.oui').hide();
+$('button').click(function(){
+  $('.oui').slideToggle();;
+  $('.learnmore').hide();;
+  $('.dick').slideToggle();;
+});
+</script>
