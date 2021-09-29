@@ -1,9 +1,10 @@
 <?php
 
-$host = "jobboard_mysql-development_1";
+$host = "localhost";
 $dbName = "jobboard";
 $user = 'root';
 $password = 'testos';
+$port = '3308';
 
 try {
     $db = new PDO("mysql:host=$host;dbname=$dbName", $user, $password);
