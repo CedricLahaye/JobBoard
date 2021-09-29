@@ -3,12 +3,12 @@
     border: 10px solid;
 }
 
-.card .leanmore{
+.card .learnmore{
     background-color: #36eb8bbb;
     color: white;
 }
 
-.card .leanmore:hover{
+.card .learnmore:hover{
     background-color: #36EB8B;
     color: #52554a;
 }
@@ -21,6 +21,14 @@ li{
     list-style: none;
 }
 
-.info .leanmore{
+.info .learnmore{
     float: right;
+}
+
+.oui p{
+    color: white;
+}
+
+.card .non {
+    background-color: white;
 }
